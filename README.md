@@ -20,7 +20,7 @@ Simular y analizar el ciclo completo de costos de personal de una empresa colomb
 
 ## 🗂️ Sobre los datos
 
-Los datos de empleados (nombres, cargos, salarios) son **sintéticos y anonimizados** — no corresponden a una empresa real. Sin embargo, todos los **cálculos de nómina siguen la normativa laboral colombiana vigente**:
+Los datos de empleados (nombres, cargos, salarios) son **completamente sintéticos** — no corresponden a una empresa real ni se derivan de ninguna base de datos real. Sin embargo, todos los **cálculos de nómina siguen la normativa laboral colombiana vigente**:
 
 - Salario Mínimo Legal Vigente (SMLV) y Auxilio de Transporte histórico 2023-2026 (fuente: Decretos del Ministerio del Trabajo)
 - Aportes a seguridad social: Salud (4% trabajador / 8,5% empleador), Pensión (4% trabajador / 12% empleador), ARL (según nivel de riesgo del cargo), Caja de Compensación Familiar (4% empleador)
@@ -33,11 +33,11 @@ Los cargos se distribuyeron de forma realista para una empresa de transporte y l
 ## 🛠️ Metodología
 
 ### 1. Preparación de la base (Excel)
-Se partió de una base de afiliación a seguridad social, a la que se le asignó ID de empleado, se anonimizaron nombres, se redistribuyeron los cargos genéricos en roles reales de transporte y logística, y se calculó un ejemplo documentado (con comentarios de celda) de cómo se liquida cada aporte y prestación social.
+Se partió de una base de datos ficticia con información genérica de empleados, a la que se le asignó ID de empleado, se generaron nombres aleatorios, se redistribuyeron los cargos genéricos en roles reales de transporte y logística, y se calculó un ejemplo documentado (con comentarios de celda) de cómo se liquida cada aporte y prestación social.
 
 ### 2. Generación del histórico de 24 meses (Python)
 Con `pandas` y `openpyxl`, se construyó un pipeline que expande la base de 156 empleados a una tabla de hechos mensual (2.605 filas), aplicando:
-- Altas y bajas reales según `FECHA_INGRESO` / `FECHA_RETIRO`
+- Altas y bajas según las fechas de ingreso y retiro definidas en la base (`FECHA_INGRESO` / `FECHA_RETIRO`)
 - Escalamiento salarial proporcional al crecimiento histórico del SMLV (2024-2026)
 - Recalculo mes a mes de todos los aportes y provisiones
 
