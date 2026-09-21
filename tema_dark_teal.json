@@ -1,0 +1,47 @@
+{
+  "name": "Dark Teal Dashboard",
+  "dataColors": [
+    "#2ED9A5",
+    "#5CE0BE",
+    "#8AE8D2",
+    "#1FAE85",
+    "#0F7A5C",
+    "#B8BCC4",
+    "#6B7280",
+    "#3A3F4B"
+  ],
+  "background": "#12141C",
+  "foreground": "#E5E7EB",
+  "tableAccent": "#2ED9A5",
+  "good": "#2ED9A5",
+  "bad": "#E5484D",
+  "neutral": "#F2B84B",
+  "maximum": "#2ED9A5",
+  "center": "#5CE0BE",
+  "minimum": "#1A1D26",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#1A1D26" } },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#262A35" } },
+            "radius": 12
+          }
+        ],
+        "title": [
+          {
+            "fontColor": { "solid": { "color": "#E5E7EB" } }
+          }
+        ]
+      }
+    }
+  }
+}
